@@ -1,0 +1,134 @@
+body {
+
+   margin: 0;
+   font-family: sans-serif;
+}
+a {
+   color: inherit;
+   text-decoration: none;
+}
+h1::before {
+   content: "Закат";
+   color: burlywood;
+}
+header {
+   height: 100px;
+   background-color: rgb(13, 13, 13);
+   color: #fff;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.banner {
+   height: 80vh;
+   background: url(img/1591254382_2.jpg) no-repeat center / cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #fff;
+   font-size: 3rem;
+   text-align: center;
+   position: relative;
+}
+.banner h1 {
+   position: relative;
+   z-index: 2;
+   /* margin-top: 145px; */
+}
+.banner::before {
+   content: "";
+   background-color: #0006;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+}
+.info {
+   background-color: rgb(138, 28, 65);
+   padding: 50px;
+   display:  grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 50px;
+}
+.info__card {
+   border: 1px solid;
+   color: white;
+   padding: 30px;
+   border-radius: 10px;
+   display: flex;
+   gap: 20px;
+}
+.info__card i {
+   font-size: 4em;
+}
+.container {
+   padding-left: calc(50% - 500px);
+   padding-right: calc(50% - 500px);   
+}
+
+@media (min-width: 600px) and (max-width:1199px) {
+   .container {
+      padding: 50px;
+   }
+   header {
+      height: auto;
+   }
+   .info {
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+@media (max-width: 610px) {
+   .container {
+      padding: 10px;
+   }
+   header {
+      height: auto;
+      flex-direction: column;
+      gap: 10px;
+   }
+   .banner {
+      height: 300px;
+   }
+   .info {
+      grid-template-columns: 1fr;
+      gap: 10px;
+   }
+   h1 {
+      font-size: 40px;
+   }
+   
+}
+
+@media {
+   .focus-in-contract {
+      -webkit-animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+              animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+   }
+    
+   @-webkit-keyframes focus-in-contract {
+      0% {
+        letter-spacing: 1em;
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
+    }
+    @keyframes focus-in-contract {
+      0% {
+        letter-spacing: 1em;
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
+    }
+}
